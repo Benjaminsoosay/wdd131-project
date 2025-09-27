@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Add new tasks to your TaskMaster Pro dashboard">
+    <title>TaskMaster Pro | Add Task</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>✅ TaskMaster Pro</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tasks.html">My Tasks</a></li>
+                    <li><a href="add-task.html" class="active">Add Task</a></li>
+                    <li><a href="references.html">References</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="form-container">
+                <h2>Add New Task</h2>
+                <p>Create a new task to organize your workflow efficiently.</p>
+                
+                <form id="taskForm" class="task-form">
+                    <div class="form-group">
+                        <label for="taskTitle">Task Title *</label>
+                        <input type="text" id="taskTitle" name="taskTitle" required 
+                               placeholder="Enter task title">
+                        <span class="error-message" id="titleError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="taskDescription">Description</label>
+                        <textarea id="taskDescription" name="taskDescription" 
+                                  placeholder="Describe your task (optional)" rows="3"></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="taskPriority">Priority *</label>
+                            <select id="taskPriority" name="taskPriority" required>
+                                <option value="">Select Priority</option>
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="taskCategory">Category</label>
+                            <select id="taskCategory" name="taskCategory">
+                                <option value="work">Work</option>
+                                <option value="personal">Personal</option>
+                                <option value="health">Health</option>
+                                <option value="education">Education</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="taskDueDate">Due Date</label>
+                            <input type="date" id="taskDueDate" name="taskDueDate">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="taskStatus">Status *</label>
+                            <select id="taskStatus" name="taskStatus" required>
+                                <option value="pending">Pending</option>
+                                <option value="in-progress">In Progress</option>
+                                <option value="completed">Completed</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="taskTags">Tags (comma separated)</label>
+                        <input type="text" id="taskTags" name="taskTags" 
+                               placeholder="urgent, project, meeting">
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Add Task</button>
+                        <button type="reset" class="btn btn-secondary">Clear Form</button>
+                    </div>
+                </form>
+
+                <div id="formFeedback" class="form-feedback" style="display: none;"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 TaskMaster Pro. All rights reserved.</p>
+            <a href="references.html">Content References</a>
+        </div>
+    </footer>
+
+    <script src="scripts/app.js"></script>
+</body>
+</html>

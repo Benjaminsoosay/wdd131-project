@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage your tasks efficiently with TaskMaster Pro">
+    <title>TaskMaster Pro | My Tasks</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>✅ TaskMaster Pro</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tasks.html" class="active">My Tasks</a></li>
+                    <li><a href="add-task.html">Add Task</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="page-header">
+                <h2>My Tasks</h2>
+                <div class="task-controls">
+                    <div class="search-box">
+                        <input type="text" id="taskSearch" placeholder="Search tasks...">
+                        <button onclick="searchTasks()">🔍</button>
+                    </div>
+                    <select id="statusFilter" onchange="filterTasks()">
+                        <option value="all">All Tasks</option>
+                        <option value="pending">Pending</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                    <button class="btn btn-secondary" onclick="clearFilters()">Clear Filters</button>
+                </div>
+            </div>
+
+            <div class="tasks-overview">
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <span class="stat-number" id="totalTasks">0</span>
+                        <span class="stat-label">Total Tasks</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" id="completedTasks">0</span>
+                        <span class="stat-label">Completed</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" id="pendingTasks">0</span>
+                        <span class="stat-label">Pending</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" id="progressPercentage">0%</span>
+                        <span class="stat-label">Progress</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tasks-container">
+                <div id="tasksList" class="tasks-list">
+                    <!-- Tasks will be dynamically inserted here -->
+                </div>
+                <div id="emptyState" class="empty-state" style="display: none;">
+                    <h3>No tasks found</h3>
+                    <p>Get started by adding your first task!</p>
+                    <a href="add-task.html" class="btn btn-primary">Add Your First Task</a>
+                    <li><a href="references.html">References</a></li>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 TaskMaster Pro. All rights reserved.</p>
+            <a href="references.html">Content References</a>
+        </div>
+    </footer>
+
+    <script src="scripts/app.js"></script>
+</body>
+</html>
